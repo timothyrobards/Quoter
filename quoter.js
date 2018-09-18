@@ -1,10 +1,8 @@
 /* 
-    Revisions tbd:
-
-        - dont repeat last! show all once before repeating
+    Random Quote Generator - Pulls a random from the array of quotes
 */
 
-var quoteArray = [
+let quoteArray = [
     {
         content: "Let's get crazy!",
         author: "Bob Ross"
@@ -18,7 +16,7 @@ var quoteArray = [
         author: "Rosa Parks"
     },
     {
-        content: "That is the key to navigating this life—don't take it too seriously. That's when the party begins.",
+        content: "That is the key to navigating this life — don't take it too seriously. That's when the party begins.",
         author: "Ru Paul"
     },
     {
@@ -64,8 +62,8 @@ var quoteArray = [
 
 ];
 
-//grab html elements
-var button = document.getElementById('new-quote'),
+//Setup html elements
+let button = document.getElementById('new-quote'),
     quote = document.getElementById('new-quote'),
     author = document.getElementById('author');
 
@@ -73,12 +71,12 @@ var button = document.getElementById('new-quote'),
 window.onload = randomQuote;
 button.addEventListener('click', randomQuote);
 
-//random quote function
+//Random quote function
 function randomQuote (){
-    //get a random number to pick a random quote object
-    random = Math.floor(Math.random() * quoteArray.length);
-    //get that random quote's content
+    //Get a random number to pick a random quote object
+    const random = Math.floor(Math.random() * quoteArray.length);
+    //Get the quote content
     quote.innerHTML = quoteArray[random].content;
-    //get that random quote's author
+    //Get the quote author
     author.innerHTML = '&mdash; ' + quoteArray[random].author;
 }
